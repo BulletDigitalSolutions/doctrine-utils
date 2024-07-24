@@ -2,7 +2,7 @@
 
 namespace Bullet\DoctrineUtils\Http\Middleware;
 
-use App\Interfaces\UrlRoutable;
+use Bullet\DoctrineUtils\Interfaces\UrlRoutable;
 use Doctrine\ORM\EntityNotFoundException;
 use Illuminate\Routing\Route;
 use LaravelDoctrine\ORM\Middleware\SubstituteBindings as BaseSubstituteBindings;
