@@ -1,0 +1,16 @@
+name: Notify Packagist
+
+on:
+  push:
+
+jobs:
+  notify-packagist:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send webhook to Packagist
+        run: |
+          curl -X POST "https://packagist.org/api/github?username=bullet" \
+          -H "Content-Type: application/json" \
+          -H "X-Hub-Signature: sha1=$(echo -n ${{ secrets.PACKAGIST_API_TOKEN }} | openssl sha1 -hmac ${{ secrets.PACKAGIST_API_TOKEN }} | cut -d ' ' -f 2)" \
+          -d '{}'
