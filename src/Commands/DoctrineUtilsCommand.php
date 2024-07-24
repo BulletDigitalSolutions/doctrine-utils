@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Bullet\DoctrineUtils\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class DoctrineUtilsCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'doctrine-utils';
 
     public $description = 'My command';
 
