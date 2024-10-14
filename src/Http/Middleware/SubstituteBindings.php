@@ -28,7 +28,7 @@ class SubstituteBindings extends BaseSubstituteBindings
 
                 if (is_null($entity) && ! $parameter->isDefaultValueAvailable()) {
                     abort(404);
-//                    throw EntityNotFoundException::fromClassNameAndIdentifier($class, ['id' => $id]);
+                    //                    throw EntityNotFoundException::fromClassNameAndIdentifier($class, ['id' => $id]);
                 }
 
                 $route->setParameter($parameter->name, $entity);
