@@ -27,7 +27,8 @@ class SubstituteBindings extends BaseSubstituteBindings
                 $entity = call_user_func([$class, 'resolveRouteBinding'], $id, $name);
 
                 if (is_null($entity) && ! $parameter->isDefaultValueAvailable()) {
-                    throw EntityNotFoundException::fromClassNameAndIdentifier($class, ['id' => $id]);
+                    abort(404);
+//                    throw EntityNotFoundException::fromClassNameAndIdentifier($class, ['id' => $id]);
                 }
 
                 $route->setParameter($parameter->name, $entity);
