@@ -10,7 +10,9 @@ use ReflectionParameter;
 
 class SubstituteBindings extends BaseSubstituteBindings
 {
-    protected function substituteImplicitBindings(Route $route)
+    // laravel-doctrine/orm 3 declares a void return on this method, so the override
+    // must match or PHP fatals on class load.
+    protected function substituteImplicitBindings(Route $route): void
     {
         $parameters = $route->parameters();
 
